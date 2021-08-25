@@ -1,6 +1,6 @@
 ## About the repo
 This repo probes the AWS LAMBDA serverless with JAVA and Nodejs
----
+
 
 ## Basic tasks
 
@@ -34,3 +34,37 @@ SAM uses CloudFormation, an AWS service for managing infrastructure as code. [SA
 ```
 aws cloudformation describe-stacks --stack-name sam-test-1
 ```
+
+#### log
+```bash 
+sam logs -n HelloWorldFunction --stack-name sam-test-1
+```
+
+#### simulating local
+
+this should start up a local API Gateway emulation and a local Lambda execution environment.
+
+``` 
+sam local start-api 
+```
+
+#### debugging
+  - plugin: AWS-toolkit
+  - vscode debugger:  support JS, TS, JAVA, ...
+  - click 'AWS: ADD Debug Configuration' at specific handler
+  
+
+----
+
+## Working with AWS
+
+- cheaper lambda and how to use it
+  
+  Having a Lambda function sitting between a user device and S3 is not really useful if it only performs autho- risation. S3 can do that itself. here’s no need to suffer through the additional latency of API proxying and Lambda execution. 
+  
+  AWS provides several ways of temporarily granting clients the right to do very speci􏰈c operations:
+  • Wecould let clients usethe AWSSDK directly,and setup IAM for each client.
+  • Wecould setup templated IAM policies for groups of end users authenticated with Amazon Cognito, a managed service for user credentials.
+  • Wecould usea Lambda function to create temporary grants for clients,so they can access our AWS resources in a limited way.
+
+
