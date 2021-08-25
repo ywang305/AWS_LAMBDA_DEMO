@@ -62,7 +62,7 @@ sam local start-api
   
   Having a Lambda function sitting between a user device and S3 is not really useful if it only performs autho- risation. S3 can do that itself. here’s no need to suffer through the additional latency of API proxying and Lambda execution. 
   
-  AWS provides several ways of temporarily granting clients the right to do very speci􏰈c operations:
+  AWS provides several ways of temporarily granting clients the right to do very operations:
   • Wecould let clients usethe AWSSDK directly,and setup IAM for each client.
   • Wecould setup templated IAM policies for groups of end users authenticated with Amazon Cognito, a managed service for user credentials.
   • Wecould usea Lambda function to create temporary grants for clients,so they can access our AWS resources in a limited way.
