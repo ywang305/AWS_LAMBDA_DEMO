@@ -1,0 +1,10 @@
+version = 0.1
+[default]
+[default.deploy]
+[default.deploy.parameters]
+stack_name = "sam-function-test"
+s3_bucket = "aws-sam-cli-managed-default-samclisourcebucket-1ulkz6giwd0er"
+s3_prefix = "sam-function-test"
+region = "us-east-1"
+confirm_changeset = true
+capabilities = "CAPABILITY_IAM"
